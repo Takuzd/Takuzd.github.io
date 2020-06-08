@@ -1,34 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>网页</title>
+        <script>
+            function showdate(){
+                var d = new Date();
+                var year = d.getFullYear()
+                var month = d.getMonth() + 1;
+                var date = d.getDate();
+                var week = d.getDay();
+                if(week == 0){
+                    week = "日";
+                }else if(week == 1){
+                    week = "一";
+                }else if(week == 2){
+                    week = "二";
+                }else if(week == 3){
+                    week = "三";
+                }else if(week == 4){
+                    week = "四";
+                }else if(week == 5){
+                    week = "五";
+                }else{
+                    week = "六";
+                }
+                var hour = d.getHours();
+                if(hour < 10){
+                    hour = "0" + hour;
+                }
+                var min = d.getMinutes();
+                if(min < 10){
+                    min = "0" + min;
+                }
+                var sec = d.getSeconds();
+                if(sec < 10){
+                    sec = "0" + sec;
+                }
+                return year + "年" + month + "月" + date + "日 星期" + week + " " + hour + ":" + min + ":" + sec;                
+            }
+            setInterval(window.onload = function(){
+                var time1 = document.getElementById("ttt");
+                time1.innerHTML = showdate();
+            }, 1000);
+                
+        </script>
     </head>
-    <body style="background-color: thistle;">
-        <div style="background-color:#FFE07A; margin: auto; width: 700px; height: 700px;">
-            <div style="color: #555; margin: auto; width: 500px;">
-                <br>
-                <br>
-                <br>
-                <br>
-                <p style="text-align:center;">
-                    <a href="https://baike.baidu.com/item/%E6%BF%80%E5%85%89%E5%88%87%E5%89%B2/10998593?fr=aladdin" target="_blank" style="text-decoration: none;"><span style="background-color: gray; color:white; font-size: 30px;" title="激光切割"> &nbsp;激光切割&nbsp;</span></a> 
-                </p>
-                <p style="font-size: 24px;">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;利用<b>高功率密度激光束</b>照射被切割材料，
-                    使材料很快被加热至汽化温度，蒸发形成孔洞，
-                    随着光束对材料的移动，孔洞连续形成宽度
-                    很窄的（如0.1mm左右）切缝，完成对材料的切割。
-                </p>
-                <hr>
-                <p style="text-align: center;">
-                    <span style="background-color: blue; color:white; font-size: 30px;">&nbsp;控制断裂&nbsp;</span> 
-                </p>
-                <p style="font-size: 24px;">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;控制断裂是利用激光刻槽时所产生的<span style="color: tomato; background-color: yellow;">陡峭的温度分布</span>，
-                    在脆性材料中产生局部热应力，使材料沿小槽断开。
-                </p>
-            </div>
+    <style>
+        html,body{
+            margin: 0;
+            height: 100%;
+        }
+        body{
+            background-image: url(image/xingkong.gif);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100%;
+        }
+
+        a{
+            float: left; 
+            margin: 10px;
+            height: auto;
+        }
+        #Timewindow{
+            float:right;
+            margin: 10px;
+            height: 100px;       
+        }
+
+        a#ttt{
+            color: chartreuse;
+            margin: auto;
+            text-decoration: none;
+            font-size: 30px;
+        }
+        #hang1 img{
+            height: 80px;
+        }
+        #hang1{
+            height: 100px;
+        }
+        #hang2 img{
+            height: 300px;
+        }
+        #hang2{
+            height: 320px;
+        }
+        </style>
+    <body>
+        <div id = "Timewindow">
+            <a href="http://time.tianqi.com/" target = "_blank" id="ttt">a</a>
         </div>
-        
+        <div id = "hang1">
+            <a href = "https://www.thorlabs.com/navigation.cfm" target = "_blank"><img src = "image/thorlabs.png" ></a>
+            <a href = "https://www.baidu.com" target = "_blank"><img src = "image/baidu.png" ></a>
+            <a href = "https://jp.rs-online.com/web/" target="_blank"><img src = "image/RS.png" ></a>
+            <a href = "https://www.google.com" target = "_blank"><img src = "image/Google.png" ></a>
+        </div>
+        <br>
+        <div id = "hang2">
+            <a href = "https://www.bilibili.com" target = "_blank"><img src = "image/bilibili.jpg" ></a>
+        </div>
+
     </body>
 </html>
